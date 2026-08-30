@@ -1,0 +1,20 @@
+{
+  "roots": ["edge-rtr"],
+  "nodes": [
+    {"id": "edge-rtr", "name": "Internet Edge Router", "type": "router", "criticality": 10},
+    {"id": "core-sw-1", "name": "Core Switch", "type": "switch", "criticality": 10},
+    {"id": "dns-1", "name": "Internal DNS", "type": "service", "criticality": 8},
+    {"id": "app-1", "name": "Employee Portal", "type": "server", "criticality": 7},
+    {"id": "access-sw-1", "name": "Floor Access Switch", "type": "switch", "criticality": 5},
+    {"id": "client-a", "name": "Analyst Laptop", "type": "client", "criticality": 2},
+    {"id": "client-b", "name": "Support Laptop", "type": "client", "criticality": 2}
+  ],
+  "links": [
+    {"from": "edge-rtr", "to": "core-sw-1", "bidirectional": true},
+    {"from": "core-sw-1", "to": "dns-1", "bidirectional": true},
+    {"from": "core-sw-1", "to": "app-1", "bidirectional": true},
+    {"from": "core-sw-1", "to": "access-sw-1", "bidirectional": true},
+    {"from": "access-sw-1", "to": "client-a", "bidirectional": true},
+    {"from": "access-sw-1", "to": "client-b", "bidirectional": true}
+  ]
+}
